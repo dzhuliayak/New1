@@ -6,6 +6,7 @@ import time
 import pygame
 
 t=0
+music=False# при старте проекта музыка не играет
 
 def set():
     global t
@@ -35,17 +36,31 @@ def check():
 
 
 def play_snd():
+    global music
+    music=True
     pygame.mixer.init()
     pygame.mixer.music.load("NataliaOreiro-AlasDeLibertad.mp3")
     pygame.mixer.music.play()# воспроизводим трек
 
+
+def stop_music():
+    global music
+    if music:
+        pygame.mixer.music.stop()#выключаем музыку
+        music=False
+    label.config(text="Установить новое напоминание")
 
 window=Tk()
 window.title("напоминание")
 label=Label(text="установите напоминание", font=("Arial", 14))
 label.pack(pady=5)
 set_button=Button(text="установить напоминание", command=set, bg="yellow", fg="blue")
-set_button.pack(pady=15)
+set_button.pack(pady=5)
+
+stop_button=Button(text="остановить музыку", command=stop_music)
+stop_button.pack(pady=5)
+
+
 
 check()
 
