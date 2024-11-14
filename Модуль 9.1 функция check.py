@@ -35,6 +35,12 @@ def check():
     window.after(10000, check)
 
 
+def play_snd():
+    pygame.mixer.init()
+    pygame.mixer.music.load("NataliaOreiro-AlasDeLibertad.mp3")
+    pygame.mixer.music.play()# воспроизводим трек
+
+
 window=Tk()
 window.title("напоминание")
 label=Label(text="установите напоминание")
