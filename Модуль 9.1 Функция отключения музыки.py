@@ -21,7 +21,8 @@ def set():
             print(dt)
             t=dt.timestamp()
             print(t)
-            label.config(text=f"напоминание на {hour:02}:{minute:02}")# :02 - это формат отображения времени 00:00
+            text = sd.askstring("текст напоминания", "введите текст напоминания")
+            label.config(text=f"напоминание на {hour:02}:{minute:02} c текстом {text}")# :02 - это формат отображения времени 00:00
         except Exception as e:
             mb.showerror("ошибка!", f"произошла ошибка {e}")
 
