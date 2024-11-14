@@ -21,6 +21,7 @@ def set():
             print(dt)
             t=dt.timestamp()
             print(t)
+            label.config(text=f"напоминание на {hour:02}:{minute:02}")# :02 - это формат отображения времени 00:00
         except Exception as e:
             mb.showerror("ошибка!", f"произошла ошибка {e}")
 
@@ -60,9 +61,6 @@ set_button.pack(pady=5)
 stop_button=Button(text="остановить музыку", command=stop_music)
 stop_button.pack(pady=5)
 
-
-
 check()
-
 
 window.mainloop()
