@@ -37,7 +37,7 @@ def check():
         now=time.time()# другая переменная now
         if now>=t:
             play_snd()
-            mb.showinfo("напоминание", f"text")
+            mb.showinfo("напоминание", f"{text}")
             t=0
     window.after(10000, check)
 
@@ -67,14 +67,8 @@ set_button.pack(pady=5)
 stop_button=Button(text="остановить музыку", command=stop_music)
 stop_button.pack(pady=5)
 
-
 canvas=Canvas(width=400, height=60) #создаем холст
 canvas.pack(pady=10)# отступ=10
-
-
-
-
-
 
 check()
 
